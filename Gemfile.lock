@@ -161,7 +161,7 @@ DEPENDENCIES
   extendmatrix (~> 0.3.1)
   faker
   jquery-rails
-  mongoid (>= 2.4.6)
+  mongoid
   mongoid-paperclip
   pdf-reader
   rails (= 3.2.2)

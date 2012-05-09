@@ -7,7 +7,7 @@ group :assets do
 end
 gem 'jquery-rails'
 gem "bson_ext", ">= 1.6.1"
-gem "mongoid", ">= 2.4.6"
+gem "mongoid"
 gem 'voteable_mongo'
 gem "devise", ">= 2.1.0.rc"
 gem "twitter-bootstrap-rails"
