@@ -201,3 +201,26 @@ ActionView::Template::Error (loginimage.png isn't precompiled):
   app/views/devise/sessions/new.html.erb:4:in `_app_views_devise_sessions_new_html_erb__1263718062692904811_70289205096460'
 
 
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-09 22:41:00 +0200
+Processing by UsersController#show as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-05-09 22:41:00 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (56.1ms)
+Completed 500 Internal Server Error in 116ms
+
+ActionView::Template::Error (loginimage.png isn't precompiled):
+    1: <div class="row">
+    2: 
+    3: 	<div class="span12"  align="center">
+    4: 	     <%= image_tag("loginimage.png", :alt => "logo") %>
+    5: 	</div>
+    6: </div>
+    7: 
+  app/views/devise/sessions/new.html.erb:4:in `_app_views_devise_sessions_new_html_erb__3014316686906440975_70135273238100'
+
+
