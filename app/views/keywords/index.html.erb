@@ -1,0 +1,29 @@
+<h1>Listing keywords</h1>
+
+</br>
+
+<table class="table">
+  <tr>
+    <th>Name</th>
+    <th>Type</th>
+    <th>Weight</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @keywords.order_by([:weight, :desc]).each do |keyword| %>
+  <tr>
+    <td><%= keyword.name %></td>
+    <td><%= keyword.type %></td>
+    <td><%= keyword.weight %><%= link_to "Up", vote_up_keyword_path(keyword) %> <%= link_to "Down", vote_down_keyword_path(keyword) %></td>
+    <td><%= link_to 'Show', keyword %></td>
+    <td><%= link_to 'Edit', edit_keyword_path(keyword) %></td>
+    <td><%= link_to 'Destroy', keyword, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Keyword', new_keyword_path %>

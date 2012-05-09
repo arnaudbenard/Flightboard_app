@@ -1,0 +1,71 @@
+<header><%= render 'layouts/header' %></header>
+<% if user_signed_in? %>
+
+
+<div class="menubar"> 
+      <ul class="menubarulleft_without">
+        <li class="menubaritem">
+          <%= link_to "Home", root_path, :class =>'menubarlink' %></li>
+      
+        <li class="menuaddjob">    <%= link_to image_tag("largebutton.png"), new_job_path, :method => :get, :class => "btn_add"%>
+
+ 
+      </ul>   
+</div>
+ 
+<div class="content">
+  <div class="job_content">
+
+<table  class="table">
+  <tr class="toptext">
+    <td class="title">Title</td>
+    <td class="title">Description</td>
+    <td class="title">Show</td>
+    <td class="title">Edit</td>
+    <td class="title">Delete</td>
+
+  </tr>
+
+<% @jobs.each do |job| %>
+  <tr>
+    <td><%= job.title %></td>
+    <td><%= job.description %></td>
+    <td><%= link_to '', job, :class => "icon-eye-open" %></td>
+    <td><%= link_to '', edit_job_path(job),:class => "icon-edit" %></td>
+    <td><%= link_to '', job, confirm: 'Are you sure?', method: :delete, :class => "icon-trash" %></td>
+  </tr>
+<% end %>
+</table>
+
+  </div>
+</div>
+   
+<!-- Apply part -->
+<%else%>
+<div class="row">
+
+<div class="span12">
+  <ul class="topbar">
+ 
+    Apply
+    </ul>
+</div>
+</div>
+
+<table  class="table">
+  <tr class="toptext">
+    <td class="title">Title</td>
+    <td class="title">Description</td>
+    <td class="title">Show</td>
+  </tr>
+
+<% @jobs.each do |job| %>
+  <tr>
+    <td><%= job.title %></td>
+    <td><%= job.description %></td>
+    <td><%= link_to '', job, :class => "icon-eye-open" %></td>
+  </tr>
+<% end %>
+</table>
+<%end%>
+<footer><%= render 'layouts/footer' %></footer>

@@ -1,0 +1,58 @@
+<header><%= render 'layouts/header' %></header>
+
+<div class="menubar"> 
+      <ul class="menubarulleft">
+        <li class="menubaritem">
+          <%= link_to "Home", root_path, :class =>'menubarlink' %></li>
+        <li class="separator"> </li>
+        <li class="menubaritem"><%= link_to @job.title, job_path(@job), :class =>'menubarlink'%></li>
+        <li class="separator"> </li>
+        <li class="menubaritem"><%= @candidate.name %></li>
+        <li class="menuright">Panel</li>
+        <li class="menunext"> <%= link_to image_tag("nextbutton.png"), job_candidate_path(@job,@next_candidate)%>
+     
+        </li>
+      </ul>   
+</div>
+ 
+<div class="content">
+  <div class="resume">
+    <div class="data">
+      <div class="name"><%= @candidate.name %></div>
+      <div class="links_resume"> <%=  link_to "Resume", @candidate.cv.url,  :target => "_blank"  %> |  <%=  link_to "Cover Letter", root_path  %></div>
+      <div class="title">Education</div>
+      <div class="info">
+        <%= simple_format(@candidate.attached_resume) %>
+
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel_title">Approved</div> 
+      <%= link_to "Approve", vote_up_job_candidate_path(@job, @candidate) %>  <%= link_to "Disapprove", vote_down_job_candidate_path(@job, @candidate) %>
+     
+
+      <br> You (<%= current_user.name %>) have  <%= current_user.vote_value(@candidate) %> this candidate
+
+      <div class="panel_title">Comment</div>  
+      <% if @candidate.comments.size > 0 %>    
+      <% for comment in @candidate.comments %> 
+
+        <% if comment.author %>
+         <b><%= comment.author %>:</b> 
+         <% end %>  
+        <p><%= comment.content %></p>  
+      <% end %>  
+    <% end %>  
+   
+    <%= form_for [@job,@candidate, Comment.new] do |f| %>  
+      <p><%= f.text_area :content,:size => "20x10"%></p>  
+      <p><%= f.submit %></p>  
+    <% end %>  
+
+    </div>
+
+  </div>
+</div>
+    
+
+<footer><%= render 'layouts/footer' %></footer>

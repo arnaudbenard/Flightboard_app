@@ -1,0 +1,19 @@
+<div class="row">
+
+	<div class="span12"  align="center">
+	     <%= image_tag("loginimage.png", :alt => "logo") %>
+	</div>
+</div>
+
+<div class="row">
+	<div class="span12"  align="center">
+		<div class="forms">
+			<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+			  <%= f.email_field :email,:class=>"form_sign_in", :placeholder => "Email" %>
+			  <%= f.password_field :password,:class=>"form_sign_in", :placeholder => "Password"%>
+			<%= f.submit "Sign in" ,:class=>"button_signin"%>
+			<% end %>
+		</div>
+
+	</div>
+</div>

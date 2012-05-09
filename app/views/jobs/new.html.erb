@@ -1,0 +1,29 @@
+    <header><%= render 'layouts/header' %></header>
+<div class="row">
+
+<div class="span12">
+  <ul class="topbar">
+ 
+
+      <li class="topbar_link">
+ <%= link_to('Home', root_path, :class => "topbar_link")%> > Add new job
+   </li>
+
+    <% if user_signed_in? %>
+   <li class="pull-right">
+       
+           <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>      
+           
+      </li>
+           
+            <% else %>
+          <%= link_to('Login', new_user_session_path, :class => 'btn btn-large')  %>
+           <%= link_to('Sign up', new_user_registration_path, :class => 'btn btn-large')  %>
+         <% end %>
+
+    </ul>
+</div>
+</div>
+<%= render 'form' %>
+
+<%= link_to 'Back', jobs_path %>

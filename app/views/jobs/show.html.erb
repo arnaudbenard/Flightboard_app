@@ -1,0 +1,75 @@
+<header><%= render 'layouts/header' %></header>
+<% if user_signed_in? %>
+
+<div class="menubar"> 
+      <ul class="menubarulleft">
+        <li class="menubaritem">
+          <%= link_to "Home", root_path, :class =>'menubarlink' %></li>
+        <li class="separator"> </li>
+        <li class="menubaritem"><%=@job.title%></li>
+        
+        <li class="menuright">Panel</li>
+        <li class="menuaddcandidate"> <%= button_to "Add candidate", new_job_candidate_path(@job), :method => :get, :class => "btn_add"%> </li>
+      </ul>   
+</div>
+
+<div class="content">
+  <div class="resume">
+   
+
+    <table class="table">
+       
+      <tr>
+        <td class="title">Name</td>
+        <td class="title">Data </td>
+   <td class="title">Show</td>
+       <td class="title">Show</td>
+      
+      </tr>
+     
+      <% @candidates.order_by([:score, :desc]).each do |candidate| %>
+     
+      <tr>
+        <td><%= candidate.name %></td>
+      
+        <td>Data</td>
+         
+       <td> 
+        <%= link_to '',  job_candidate_path(:id => candidate.id, :job_id => @job.id),:class => "icon-eye-open" %></td>
+      <td><%= @job.candidates.count %> Candidates</td>
+      </tr>
+
+    <% end %>
+    </table>
+
+  </div>
+</div>
+
+
+
+<!-- Not logged in part -->
+
+
+<% else %>
+<div class="row">
+
+<div class="span12">
+  <ul class="topbar">
+ 
+    Apply
+    </ul>
+</div>
+</div>
+  <b>Title:</b>
+  <%= @job.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @job.description %>
+</p>
+ <%= button_to "Apply", new_job_candidate_path(@job), :method => :get, :class => "btn"%>
+
+<% end %>
+<footer><%= render 'layouts/footer' %></footer>
+

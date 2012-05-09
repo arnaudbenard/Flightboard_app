@@ -1,0 +1,176 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+*/
+/*
+ *= require bootstrap_and_overrides
+ */
+ .logotop{
+ 	padding-top:24px;
+ }
+ .userlogout{
+ 	padding-top:33px;
+ 	font-size: 14pt;
+	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue";
+ 	color: #cccccc;
+ 	text-align: right;
+ }
+.toplink{
+	color:#37ade2;
+	padding-right: 25px;
+}
+
+.menubar{
+height: 48px;
+line-height: 18px;
+margin-bottom: 0px;
+margin-left: -30px;
+margin-right: 0px;
+margin-top: 0px;
+width: 1200px;
+}
+.menubarlink{
+	color: #B3B3B3;
+}
+.menubarulleft_without{
+	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue";
+	font-size:14px;
+	color: #B3B3B3;
+	width:1170px;
+	height: 48px;
+	margin-top:25px;
+	list-style-type: none;
+	background: url("menuwithout.png");
+}
+.menubarulleft{
+	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue";
+	font-size:14px;
+	color: #B3B3B3;
+	width:1170px;
+	height: 48px;
+	margin-top:25px;
+	list-style-type: none;
+	background: url("menu.png");
+}
+.menubaritem{
+	line-height:48px;
+	height:48px;
+	float: left;
+	padding-left:25px;
+	padding-right: 15px;
+}
+.menuright{
+	line-height:48px;
+	height:48px;
+	width:375px;
+	float: right;
+}
+.separator{
+	float: left;
+	height:48px;
+	padding-left: 25px;
+	background: url("separator.png") no-repeat;
+}
+.menuaddjob{
+	float:right;
+	width:85px;
+	height:30px;
+	margin-top:9px;
+}
+.menuaddcandidate{
+	float:right;
+	width:130px;
+	height:30px;
+	margin-top:9px;
+}
+.menunext{
+	float:right;
+	width:66px;
+	height:30px;
+	margin-top:9px;
+}
+.content{
+margin-bottom: 0px;
+margin-left: -30px;
+margin-right: 0px;
+margin-top: 0px;
+width: 1200px;
+}
+.job_content{
+	background: url("fullwhite.png")repeat-y;
+	width:1170px;
+	margin-left:25px;
+	float:left;
+
+}
+.resume{
+	background: url("content.png") repeat-y;
+	width:1170px;
+	margin-left:25px;
+	float:left;
+}
+.panel{
+	padding-left:25px;
+	width:375px;
+	padding-top:25px;
+	float:left;
+}
+.name{
+	height:50px;
+	margin-top:35px;
+	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue";
+}
+.info{
+	font-family:"Helvetica Neue";
+	width: 720px;
+	padding-bottom:25px;
+}
+.data{
+	width:745px;
+	font-family:"Helvetica Neue";
+
+	float:left;
+	padding-left:25px;
+}
+.links_resume{
+	font-size:14px;
+	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue";
+}
+.title{
+	color:#cccccc;
+	font-size: 14px;
+	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue";
+	line-height:45px;
+
+}
+.panel_title{
+	font-size:18px;
+	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue";
+}
+.footerlist{
+	font-family:"Helvetica Neue";
+}
+.footercontainer{
+margin-bottom: 0px;
+margin-left: -30px;
+margin-right: 0px;
+margin-top: 0px;
+width: 1200px;
+}
+.footercontent{
+padding-top:15px;
+width:1170px;
+margin-left:25px;
+float:left;
+
+border-top: solid 1px  #cccccc;
+}

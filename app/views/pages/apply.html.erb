@@ -1,0 +1,18 @@
+
+<table class="table">
+  <tr>
+    <th>Title</th>
+    <th>Description</th>
+    <th></th>
+
+  </tr>
+
+<% @jobs.each do |job| %>
+  <tr>
+    <td><%= job.title %></td>
+    <td><%= job.description %></td>
+    <td><%= link_to 'Apply', job %></td>
+    
+  </tr>
+<% end %>
+</table>

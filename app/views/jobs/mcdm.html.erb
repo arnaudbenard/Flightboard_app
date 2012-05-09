@@ -1,0 +1,29 @@
+<header><%= render 'layouts/header' %></header>
+
+<h1>MCDM Analysis</h1>
+
+<h3>Criteria Weights</h3>
+
+<table class="table">
+       <thead>
+      <tr>
+        <td><b>Criteria</b></td>
+        <td><b>Description</b></td>
+        <td><b>Weight</b></td>
+       <td> </td>
+      
+      </tr>
+       </thead>
+      <% @criteria.order_by([:weight, :desc]).each do |criterium| %>
+       <thead>
+      <tr>
+        <td><%= criterium.name %></td>
+        <td><%= criterium.description %></td>
+        <td><%= criterium.weight %><%= link_to "Up", vote_up_job_criterium_path(@job, criterium) %> <%= link_to "Down", vote_down_job_criterium_path(@job, criterium) %></td>
+      </tr>
+       </thead>
+    <% end %>
+</table>
+
+<%= Mcdm::mcdm(@criteria, @candidates) %>
+    
