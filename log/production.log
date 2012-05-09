@@ -1,0 +1,203 @@
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-09 22:16:52 +0200
+
+TypeError (db_name must be a string or symbol):
+  mongo (1.6.2) lib/mongo/util/support.rb:49:in `validate_db_name'
+  mongo (1.6.2) lib/mongo/db.rb:79:in `initialize'
+  mongo (1.6.2) lib/mongo/connection.rb:311:in `new'
+  mongo (1.6.2) lib/mongo/connection.rb:311:in `db'
+  mongoid (2.4.9) lib/mongoid/config/database.rb:19:in `configure'
+  mongoid (2.4.9) lib/mongoid/config.rb:290:in `configure_databases'
+  mongoid (2.4.9) lib/mongoid/config.rb:223:in `master'
+  mongoid (2.4.9) lib/mongoid.rb:148:in `master'
+  mongoid (2.4.9) lib/mongoid/collection.rb:126:in `master'
+  mongoid (2.4.9) lib/mongoid/collection.rb:60:in `find_one'
+  mongoid (2.4.9) lib/mongoid/contexts/mongo.rb:203:in `first'
+  mongoid (2.4.9) lib/mongoid/criteria.rb:45:in `first'
+  orm_adapter (0.0.7) lib/orm_adapter/adapters/mongoid.rb:32:in `get'
+  devise (2.1.0.rc) lib/devise/models/authenticatable.rb:146:in `serialize_from_session'
+  devise (2.1.0.rc) lib/devise/rails/warden_compat.rb:27:in `deserialize'
+  warden (1.1.1) lib/warden/session_serializer.rb:31:in `fetch'
+  warden (1.1.1) lib/warden/proxy.rb:196:in `user'
+  warden (1.1.1) lib/warden/proxy.rb:293:in `_perform_authentication'
+  warden (1.1.1) lib/warden/proxy.rb:90:in `authenticate'
+  warden (1.1.1) lib/warden/proxy.rb:100:in `authenticate?'
+  devise (2.1.0.rc) lib/devise/rails/routes.rb:274:in `block in authenticated'
+  actionpack (3.2.1) lib/action_dispatch/routing/mapper.rb:31:in `call'
+  actionpack (3.2.1) lib/action_dispatch/routing/mapper.rb:31:in `block in matches?'
+  actionpack (3.2.1) lib/action_dispatch/routing/mapper.rb:28:in `each'
+  actionpack (3.2.1) lib/action_dispatch/routing/mapper.rb:28:in `matches?'
+  actionpack (3.2.1) lib/action_dispatch/routing/mapper.rb:40:in `call'
+  journey (1.0.3) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.3) lib/journey/router.rb:56:in `each'
+  journey (1.0.3) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.1) lib/action_dispatch/routing/route_set.rb:589:in `call'
+  mongoid (2.4.9) lib/rack/mongoid/middleware/identity_map.rb:33:in `block in call'
+  mongoid (2.4.9) lib/mongoid.rb:133:in `unit_of_work'
+  mongoid (2.4.9) lib/rack/mongoid/middleware/identity_map.rb:33:in `call'
+  warden (1.1.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.1.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.1.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.1) lib/active_support/callbacks.rb:405:in `_run__672872431628043418__call__3297175180060263602__callbacks'
+  activesupport (3.2.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.1) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Arnaud/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/Arnaud/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/Arnaud/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-09 22:16:54 +0200
+
+TypeError (db_name must be a string or symbol):
+  mongo (1.6.2) lib/mongo/util/support.rb:49:in `validate_db_name'
+  mongo (1.6.2) lib/mongo/db.rb:79:in `initialize'
+  mongo (1.6.2) lib/mongo/connection.rb:311:in `new'
+  mongo (1.6.2) lib/mongo/connection.rb:311:in `db'
+  mongoid (2.4.9) lib/mongoid/config/database.rb:19:in `configure'
+  mongoid (2.4.9) lib/mongoid/config.rb:290:in `configure_databases'
+  mongoid (2.4.9) lib/mongoid/config.rb:223:in `master'
+  mongoid (2.4.9) lib/mongoid.rb:148:in `master'
+  mongoid (2.4.9) lib/mongoid/collection.rb:126:in `master'
+  mongoid (2.4.9) lib/mongoid/collection.rb:60:in `find_one'
+  mongoid (2.4.9) lib/mongoid/contexts/mongo.rb:203:in `first'
+  mongoid (2.4.9) lib/mongoid/criteria.rb:45:in `first'
+  orm_adapter (0.0.7) lib/orm_adapter/adapters/mongoid.rb:32:in `get'
+  devise (2.1.0.rc) lib/devise/models/authenticatable.rb:146:in `serialize_from_session'
+  devise (2.1.0.rc) lib/devise/rails/warden_compat.rb:27:in `deserialize'
+  warden (1.1.1) lib/warden/session_serializer.rb:31:in `fetch'
+  warden (1.1.1) lib/warden/proxy.rb:196:in `user'
+  warden (1.1.1) lib/warden/proxy.rb:293:in `_perform_authentication'
+  warden (1.1.1) lib/warden/proxy.rb:90:in `authenticate'
+  warden (1.1.1) lib/warden/proxy.rb:100:in `authenticate?'
+  devise (2.1.0.rc) lib/devise/rails/routes.rb:274:in `block in authenticated'
+  actionpack (3.2.1) lib/action_dispatch/routing/mapper.rb:31:in `call'
+  actionpack (3.2.1) lib/action_dispatch/routing/mapper.rb:31:in `block in matches?'
+  actionpack (3.2.1) lib/action_dispatch/routing/mapper.rb:28:in `each'
+  actionpack (3.2.1) lib/action_dispatch/routing/mapper.rb:28:in `matches?'
+  actionpack (3.2.1) lib/action_dispatch/routing/mapper.rb:40:in `call'
+  journey (1.0.3) lib/journey/router.rb:68:in `block in call'
+  journey (1.0.3) lib/journey/router.rb:56:in `each'
+  journey (1.0.3) lib/journey/router.rb:56:in `call'
+  actionpack (3.2.1) lib/action_dispatch/routing/route_set.rb:589:in `call'
+  mongoid (2.4.9) lib/rack/mongoid/middleware/identity_map.rb:33:in `block in call'
+  mongoid (2.4.9) lib/mongoid.rb:133:in `unit_of_work'
+  mongoid (2.4.9) lib/rack/mongoid/middleware/identity_map.rb:33:in `call'
+  warden (1.1.1) lib/warden/manager.rb:35:in `block in call'
+  warden (1.1.1) lib/warden/manager.rb:34:in `catch'
+  warden (1.1.1) lib/warden/manager.rb:34:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+  rack (1.4.1) lib/rack/etag.rb:23:in `call'
+  rack (1.4.1) lib/rack/conditionalget.rb:25:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/head.rb:14:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/flash.rb:242:in `call'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:205:in `context'
+  rack (1.4.1) lib/rack/session/abstract/id.rb:200:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/cookies.rb:338:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/callbacks.rb:28:in `block in call'
+  activesupport (3.2.1) lib/active_support/callbacks.rb:405:in `_run__672872431628043418__call__3297175180060263602__callbacks'
+  activesupport (3.2.1) lib/active_support/callbacks.rb:405:in `__run_callback'
+  activesupport (3.2.1) lib/active_support/callbacks.rb:385:in `_run_call_callbacks'
+  activesupport (3.2.1) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (3.2.1) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/remote_ip.rb:31:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/debug_exceptions.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/show_exceptions.rb:56:in `call'
+  railties (3.2.1) lib/rails/rack/logger.rb:26:in `call_app'
+  railties (3.2.1) lib/rails/rack/logger.rb:16:in `call'
+  actionpack (3.2.1) lib/action_dispatch/middleware/request_id.rb:22:in `call'
+  rack (1.4.1) lib/rack/methodoverride.rb:21:in `call'
+  rack (1.4.1) lib/rack/runtime.rb:17:in `call'
+  activesupport (3.2.1) lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+  rack (1.4.1) lib/rack/lock.rb:15:in `call'
+  rack-cache (1.2) lib/rack/cache/context.rb:136:in `forward'
+  rack-cache (1.2) lib/rack/cache/context.rb:245:in `fetch'
+  rack-cache (1.2) lib/rack/cache/context.rb:185:in `lookup'
+  rack-cache (1.2) lib/rack/cache/context.rb:66:in `call!'
+  rack-cache (1.2) lib/rack/cache/context.rb:51:in `call'
+  railties (3.2.1) lib/rails/engine.rb:479:in `call'
+  railties (3.2.1) lib/rails/application.rb:220:in `call'
+  rack (1.4.1) lib/rack/content_length.rb:14:in `call'
+  railties (3.2.1) lib/rails/rack/log_tailer.rb:14:in `call'
+  rack (1.4.1) lib/rack/handler/webrick.rb:59:in `service'
+  /Users/Arnaud/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:111:in `service'
+  /Users/Arnaud/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/httpserver.rb:70:in `run'
+  /Users/Arnaud/.rvm/rubies/ruby-1.9.2-p290/lib/ruby/1.9.1/webrick/server.rb:183:in `block in start_thread'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-05-09 22:19:08 +0200
+Processing by UsersController#show as HTML
+Completed 401 Unauthorized in 0ms
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-05-09 22:19:13 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (707.4ms)
+Completed 500 Internal Server Error in 1045ms
+
+ActionView::Template::Error (loginimage.png isn't precompiled):
+    1: <div class="row">
+    2: 
+    3: 	<div class="span12"  align="center">
+    4: 	     <%= image_tag("loginimage.png", :alt => "logo") %>
+    5: 	</div>
+    6: </div>
+    7: 
+  app/views/devise/sessions/new.html.erb:4:in `_app_views_devise_sessions_new_html_erb__1263718062692904811_70289205096460'
+
+
+
+
+Started GET "/users/sign_in" for 127.0.0.1 at 2012-05-09 22:19:19 +0200
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/sessions/new.html.erb within layouts/application (0.8ms)
+Completed 500 Internal Server Error in 2ms
+
+ActionView::Template::Error (loginimage.png isn't precompiled):
+    1: <div class="row">
+    2: 
+    3: 	<div class="span12"  align="center">
+    4: 	     <%= image_tag("loginimage.png", :alt => "logo") %>
+    5: 	</div>
+    6: </div>
+    7: 
+  app/views/devise/sessions/new.html.erb:4:in `_app_views_devise_sessions_new_html_erb__1263718062692904811_70289205096460'
+
+
