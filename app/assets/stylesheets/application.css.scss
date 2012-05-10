@@ -174,3 +174,9 @@ float:left;
 
 border-top: solid 1px  #cccccc;
 }
+.attached_resume{
+	 display: none;
+}
+.linkshow:hover .attached_resume{
+	display : block;
+}

@@ -21,10 +21,9 @@
        
       <tr>
         <td class="title">Name</td>
-        <td class="title">Data </td>
-   <td class="title">Show</td>
+
        <td class="title">Show</td>
-      
+      <td class="title">More infos</td>
       </tr>
      
       <% @candidates.order_by([:score, :desc]).each do |candidate| %>
@@ -32,11 +31,11 @@
       <tr>
         <td><%= candidate.name %></td>
       
-        <td>Data</td>
          
        <td> 
         <%= link_to '',  job_candidate_path(:id => candidate.id, :job_id => @job.id),:class => "icon-eye-open" %></td>
-      <td><%= @job.candidates.count %> Candidates</td>
+     <td class="linkshow">  Show me more
+      <div class="attached_resume"><%= truncate(candidate.attached_resume, :length => 25, :omission => '...')%> </div></td> 
       </tr>
 
     <% end %>
