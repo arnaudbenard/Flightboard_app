@@ -29,10 +29,8 @@
     <div class="panel">
       <div class="panel_title">Approved</div> 
       <%= link_to "Approve", vote_up_job_candidate_path(@job, @candidate) %>  <%= link_to "Disapprove", vote_down_job_candidate_path(@job, @candidate) %>
-     
-
       <br> You (<%= current_user.name %>) have  <%= current_user.vote_value(@candidate) %> this candidate
-
+      <br><br>
       <div class="panel_title">Comment</div>  
       <% if @candidate.comments.size > 0 %>    
       <% for comment in @candidate.comments %> 
@@ -43,9 +41,10 @@
         <p><%= comment.content %></p>  
       <% end %>  
     <% end %>  
-   
+    <div class="panel_title">New comment</div>  
+
     <%= form_for [@job,@candidate, Comment.new] do |f| %>  
-      <p><%= f.text_area :content,:size => "20x10"%></p>  
+      <p><%= f.text_area :content,:size => "2x5"%></p>  
       <p><%= f.submit %></p>  
     <% end %>  
 
