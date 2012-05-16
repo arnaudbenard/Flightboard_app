@@ -6,10 +6,8 @@ test:
   host: localhost
   database: mvp_test
 
-
-# set these environment variables on your prod server
 production:
-  uri: <%= ENV['MONGOHQ_URL'] %>
+  uri: <%= ENV['MONGOLAB_URI'] %>
   #host: localhost
   #database: mvp_production
  # host: <%= ENV['MONGOID_HOST'] %>
