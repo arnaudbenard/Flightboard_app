@@ -1,18 +1,21 @@
 <header><%= render 'layouts/header' %></header>
+<div class="menubar"> 
+      <ul class="menubarulleft_without">
+        <li class="menubaritem">
+          <%= link_to "Home", root_path, :class =>'menubarlink' %></li><li class="separator"> </li>
+        <li class="menubaritem"><%= link_to @job.title, job_path(@job), :class =>'menubarlink'%></li>
+        <li class="separator"> </li>
+        <li class="menubaritem">Add new candidate</li>
+      </ul>   
+</div>
 <% if user_signed_in? %>
-<ul class="breadcrumb">
-  <li>
-    <%=  link_to "Flightboard",root_path %> <span class="divider">/</span>
-  </li>
- 
-  <li>
-  	Add new candidate<span class="divider">/</span>
-  </li>
-  
-</ul>
-<%= render 'form' %>
-
-<%= link_to 'Back', job_candidates_path %>
+<div class="content">
+ 	<div class="job_content form_content">
+		<%= render 'form' %>
+		<%= link_to 'Back', job_candidates_path %>
+	</div>
+</div>
+<footer><%= render 'layouts/footer' %></footer>
 
 <%else%>
 <div class="row">

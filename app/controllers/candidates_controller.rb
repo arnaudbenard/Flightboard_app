@@ -40,6 +40,7 @@ class CandidatesController < ApplicationController
   # GET /candidates/new.json
   def new
     @candidate = Candidate.new
+    @job = Job.find(params[:job_id])
 
     respond_to do |format|
       format.html # new.html.erb
