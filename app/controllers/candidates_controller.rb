@@ -15,7 +15,7 @@ class CandidatesController < ApplicationController
   # GET /candidates/1
   # GET /candidates/1.json
   def show
-     require 'open-uri'
+    require 'open-uri'
 
     @summaries=Summary.all
     @candidate = Candidate.find(params[:id])
@@ -27,6 +27,7 @@ class CandidatesController < ApplicationController
     @next_candidate=@candidate.find_next(@job.candidates)
 
   
+
     if @candidate.cv.nil? == false
     	@candidate.add_resume(@candidate.cv.path,@keywords)
     end

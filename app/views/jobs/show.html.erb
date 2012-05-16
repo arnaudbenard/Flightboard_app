@@ -7,40 +7,29 @@
           <%= link_to "Home", root_path, :class =>'menubarlink' %></li>
         <li class="separator"> </li>
         <li class="menubaritem"><%=@job.title%></li>
-        
-        <li class="menuright">Panel</li>
-        <li class="menuaddcandidate"> <%= button_to "Add candidate", new_job_candidate_path(@job), :method => :get, :class => "btn_add"%> </li>
+        <li class="menuaddcandidate"> <%= button_to "Add candidate", new_job_candidate_path(@job), :method => :get, :class => "btn_add"%>  </li>
       </ul>   
 </div>
 
 <div class="content">
   <div class="resume">
-   
-
+   <div class="stat">You have reviewed <%= @count%> / <%= @candidates.count%> candidates | Review more</div>
     <table class="table">
-       
       <tr>
         <td class="title">Name</td>
-
-       <td class="title">Show</td>
-      <td class="title">More infos</td>
+        <td class="title"> </td>
+         <td class="title">Review</td>
       </tr>
-     
       <% @candidates.order_by([:score, :desc]).each do |candidate| %>
-     
       <tr>
         <td><%= candidate.name %></td>
-      
-         
-       <td> 
-        <%= link_to '',  job_candidate_path(:id => candidate.id, :job_id => @job.id),:class => "icon-eye-open" %></td>
-     <td class="linkshow">  Show me more
-      <div class="attached_resume"><%= truncate(candidate.attached_resume, :length => 25, :omission => '...')%> </div></td> 
+        <td><%= link_to '',  job_candidate_path(:id => candidate.id, :job_id => @job.id),:class => "icon-eye-open" %></td>
+        <td><%=current_user.vote_value(candidate)%></td>
       </tr>
 
     <% end %>
     </table>
-
+ 
   </div>
 </div>
 

@@ -89,7 +89,7 @@ width: 1200px;
 }
 .menuaddcandidate{
 	float:right;
-	width:130px;
+	width:106px;
 	height:30px;
 	margin-top:9px;
 }
@@ -100,24 +100,26 @@ width: 1200px;
 	margin-top:9px;
 }
 .content{
-margin-bottom: 0px;
-margin-left: -30px;
-margin-right: 0px;
-margin-top: 0px;
-width: 1200px;
+	margin-bottom: 0px;
+	margin-left: -30px;
+	margin-right: 0px;
+	margin-top: 0px;
+	width: 1200px;
 }
 .job_content{
 	background: url("fullwhite.png")repeat-y;
 	width:1170px;
 	margin-left:25px;
 	float:left;
-
+	border-bottom:1px solid #CCCCCC;
 }
 .resume{
 	background: url("content.png") repeat-y;
 	width:1170px;
 	margin-left:25px;
 	float:left;
+	border-bottom:1px solid #CCCCCC;
+
 }
 .panel{
 	padding-left:25px;
@@ -172,8 +174,6 @@ padding-top:15px;
 width:1170px;
 margin-left:25px;
 float:left;
-
-border-top: solid 1px  #cccccc;
 }
 .attached_resume{
 	 display: none;
@@ -184,4 +184,19 @@ border-top: solid 1px  #cccccc;
 .form_content{
 	padding-left:25px;
 	padding-top:25px;
+}
+.candidate_table{
+	width:750px;
+	margin-left:20px;
+	float:left;
+}
+.panel_candidate{
+	padding-left:25px;
+	width:350px;
+	float:left;
+}
+.stat{
+	padding-left: 25px;
+	height: 30px;
+	padding-top:15px;
 }
