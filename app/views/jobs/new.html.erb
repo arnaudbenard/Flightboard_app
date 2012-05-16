@@ -1,29 +1,24 @@
-    <header><%= render 'layouts/header' %></header>
-<div class="row">
+<header><%= render 'layouts/header' %></header>
 
-<div class="span12">
-  <ul class="topbar">
- 
-
-      <li class="topbar_link">
- <%= link_to('Home', root_path, :class => "topbar_link")%> > Add new job
-   </li>
-
-    <% if user_signed_in? %>
-   <li class="pull-right">
-       
-           <%= link_to('Logout', destroy_user_session_path, :method=>'delete') %>      
-           
-      </li>
-           
-            <% else %>
-          <%= link_to('Login', new_user_session_path, :class => 'btn btn-large')  %>
-           <%= link_to('Sign up', new_user_registration_path, :class => 'btn btn-large')  %>
-         <% end %>
-
-    </ul>
+<div class="menubar"> 
+      <ul class="menubarulleft_without">
+        <li class="menubaritem">
+          <%= link_to "Home", root_path, :class =>'menubarlink' %></li><li class="separator"> </li>
+        <li class="menubaritem">Add new job</li>
+      </ul>   
 </div>
-</div>
-<%= render 'form' %>
 
-<%= link_to 'Back', jobs_path %>
+<% if user_signed_in? %>
+                  
+<div class="content">
+  <div class="job_content">
+    <%= render 'form' %>
+    <%= link_to 'Back', jobs_path %>
+  </div>
+</div>
+
+<footer><%= render 'layouts/footer' %></footer>
+<% else %>
+  <%= link_to('Login', new_user_session_path, :class => 'btn btn-large')  %>
+  <%= link_to('Sign up', new_user_registration_path, :class => 'btn btn-large')  %>
+<% end %>
