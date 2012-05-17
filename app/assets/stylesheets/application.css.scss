@@ -158,6 +158,7 @@ width: 1200px;
 .panel_title{
 	font-size:18px;
 	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue";
+	height:30px;
 }
 .footerlist{
 	font-family:"Helvetica Neue";
@@ -199,4 +200,14 @@ float:left;
 	padding-left: 25px;
 	height: 30px;
 	padding-top:15px;
+}
+.comment{
+	color:#B3B3B3;
+	font-family:"Helvetica Neue";
+
+}
+.comment_author{
+	font-family:"HelveticaNeue-Light","Helvetica Neue Light","Helvetica Neue";
+	font-size:16px;
+	height:23px;
 }

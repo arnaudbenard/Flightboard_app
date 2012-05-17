@@ -20,7 +20,7 @@
     <div class="data">
       <div class="name"><%= @candidate.name %></div>
       <div class="links_resume"> <%=  link_to "Resume", @candidate.cv.url,  :target => "_blank"  %> |  <%=  link_to "Cover Letter", root_path  %></div>
-      <div class="title">Education</div>
+      <div class="title">Resume</div>
       <div class="info">
         <%= simple_format(@candidate.attached_resume) %>
 
@@ -31,16 +31,16 @@
       <%= link_to "", vote_up_job_candidate_path(@job, @candidate),:class => "icon-ok" %>  <%= link_to "", vote_down_job_candidate_path(@job, @candidate),:class => "icon-remove" %>
       <br> You (<%= current_user.name %>) have  <%= current_user.vote_value(@candidate) %> this candidate
       <br><br>
-      <div class="panel_title">Comment</div>  
+      <div class="panel_title">Comments</div>  
       <% if @candidate.comments.size > 0 %>    
       <% for comment in @candidate.comments %> 
 
-        <% if comment.author %>
-         <b><%= comment.author %>:</b> 
+        <% if comment.author %><br/><div class="comment_author"><%= comment.author %></div> 
          <% end %>  
-        <p><%= comment.content %></p>  
+        <div class="comment"><%= comment.content %></div> 
       <% end %>  
     <% end %>  
+    <br/>
     <div class="panel_title">New comment</div>  
 
     <%= form_for [@job,@candidate, Comment.new] do |f| %>  
