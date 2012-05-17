@@ -17,14 +17,6 @@ class JobsController < ApplicationController
     @keywords= Keyword.all
     @job = Job.find(params[:id])
     @candidates = @job.candidates.all
-
-    @count=0
-    @candidates.each do |candidate|
-     if current_user.vote_value(candidate).nil? == false
-      @count=@count+1
-     end
-    end
-    
     respond_to do |format|
       format.html # show.html.erb
       format.json { render json: @job }

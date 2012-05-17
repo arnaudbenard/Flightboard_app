@@ -27,8 +27,8 @@
       </div>
     </div>
     <div class="panel">
-      <div class="panel_title">Approved</div> 
-      <%= link_to "Approve", vote_up_job_candidate_path(@job, @candidate) %>  <%= link_to "Disapprove", vote_down_job_candidate_path(@job, @candidate) %>
+      <div class="panel_title">Approved</div>
+      <%= link_to "", vote_up_job_candidate_path(@job, @candidate),:class => "icon-ok" %>  <%= link_to "", vote_down_job_candidate_path(@job, @candidate),:class => "icon-remove" %>
       <br> You (<%= current_user.name %>) have  <%= current_user.vote_value(@candidate) %> this candidate
       <br><br>
       <div class="panel_title">Comment</div>  
